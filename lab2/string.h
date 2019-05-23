@@ -5,9 +5,9 @@
 
 using namespace std;
 
-#define MAX_STRING_LEN 100 // максимальная длина строк в символах
+#define MAX_STRING_LEN 100 // РјР°РєСЃРёРјР°Р»СЊРЅР°СЏ РґР»РёРЅР° СЃС‚СЂРѕРє РІ СЃРёРјРІРѕР»Р°С…
 
-// Базовый  абстрактный класс
+// Р‘Р°Р·РѕРІС‹Р№  Р°Р±СЃС‚СЂР°РєС‚РЅС‹Р№ РєР»Р°СЃСЃ
 class StringObj
 {
 public:
@@ -17,18 +17,18 @@ public:
 	virtual void Show(void) = 0;
 };
 
-// класс Символьная строка (произвольная строка данных)
+// РєР»Р°СЃСЃ РЎРёРјРІРѕР»СЊРЅР°СЏ СЃС‚СЂРѕРєР° (РїСЂРѕРёР·РІРѕР»СЊРЅР°СЏ СЃС‚СЂРѕРєР° РґР°РЅРЅС‹С…)
 class SymbString : public StringObj
 {
 protected:
-	std::string name; // имя объекта
-	std::string value;// значение(данные) объекта
+	std::string name; // РёРјСЏ РѕР±СЉРµРєС‚Р°
+	std::string value;// Р·РЅР°С‡РµРЅРёРµ(РґР°РЅРЅС‹Рµ) РѕР±СЉРµРєС‚Р°
 public:
-	//конструктор по-умолчанию
+	//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ-СѓРјРѕР»С‡Р°РЅРёСЋ
 	SymbString(){}
-	SymbString(std::string _name) :name(_name){}// конструктор с параметром: имя объекта
-	SymbString(std::string _name, std::string _val) :name(_name), value(_val){}// конструктор с двумя параметрами: имя и значение
-	~SymbString(){} // деструктор
+	SymbString(std::string _name) :name(_name){}// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂРѕРј: РёРјСЏ РѕР±СЉРµРєС‚Р°
+	SymbString(std::string _name, std::string _val) :name(_name), value(_val){}// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РґРІСѓРјСЏ РїР°СЂР°РјРµС‚СЂР°РјРё: РёРјСЏ Рё Р·РЅР°С‡РµРЅРёРµ
+	~SymbString(){} // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 	SymbString& operator=(SymbString &p);
 
 	virtual const std::string& GetName(){ return name; }
@@ -40,16 +40,16 @@ public:
 };
 
 
-// Класс Восьмеричная строка (изображение восьмеричного числа)
-// наследник от класса Символьной строки
+// РљР»Р°СЃСЃ Р’РѕСЃСЊРјРµСЂРёС‡РЅР°СЏ СЃС‚СЂРѕРєР° (РёР·РѕР±СЂР°Р¶РµРЅРёРµ РІРѕСЃСЊРјРµСЂРёС‡РЅРѕРіРѕ С‡РёСЃР»Р°)
+// РЅР°СЃР»РµРґРЅРёРє РѕС‚ РєР»Р°СЃСЃР° РЎРёРјРІРѕР»СЊРЅРѕР№ СЃС‚СЂРѕРєРё
 class OctString : public SymbString
 {
 protected:
 	long int GetDecVal(void);
 public:
-	OctString();// конструктор
-	OctString(std::string _name);// конструктор
-	OctString(std::string _name, std::string _val);// конструктор
+	OctString();// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	OctString(std::string _name);// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+	OctString(std::string _name, std::string _val);// РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
 	virtual void Show(void);
 	friend OctString operator+(OctString &os1, OctString &os2);
 	
