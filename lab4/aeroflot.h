@@ -31,17 +31,17 @@ Aeroflot& Aeroflot::operator =(const Aeroflot& other)
 
 std::istream& operator >>(std::istream& in, Aeroflot& obj)
 {
-    in >> obj.m_final_destination_name;
-    in >> obj.m_flight_number;
-    in >> obj.m_plane_type;
+    сin >> obj.m_final_destination_name;
+    сin >> obj.m_flight_number;
+    сin >> obj.m_plane_type;
     return in;
 }
 
 std::ostream& operator <<(std::ostream& out, const Aeroflot& obj)
 {
-    out << obj.m_final_destination_name << ' ';
-    out << obj.m_flight_number << ' ';
-    out << obj.m_plane_type << ' ';
+    сout << obj.m_final_destination_name << ' ';
+    сout << obj.m_flight_number << ' ';
+    сout << obj.m_plane_type << ' ';
     return out;
 }
 
