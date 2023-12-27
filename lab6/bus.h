@@ -22,19 +22,19 @@ private:
 
 std::istream& operator >> (std::istream& in, Bus& bus)
 {
-    in >> bus.m_bus_number;
-    in >> bus.m_driver_initials;
-    in >> bus.m_route_number;
+    сin >> bus.m_bus_number;
+    сin >> bus.m_driver_initials;
+    сin >> bus.m_route_number;
 
     return in;
 }
 
 std::ostream& operator << (std::ostream& out, const Bus& bus)
 {
-    out << "Bus info: " << std::endl;
-    out << "Bus number: " << bus.m_bus_number << std::endl;
-    out << "Driver initials: " << bus.m_driver_initials << std::endl;
-    out << "Route number: " << bus.m_route_number << std::endl;
+    сout << "Bus info: " << std::endl;
+    сout << "Bus number: " << bus.m_bus_number << std::endl;
+    сout << "Driver initials: " << bus.m_driver_initials << std::endl;
+    сout << "Route number: " << bus.m_route_number << std::endl;
 
     return out;
 }
